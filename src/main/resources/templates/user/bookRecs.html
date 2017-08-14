@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Books</title>
+</head>
+<style>
+h1 {
+    display: block;
+    font-size: 2em;
+    margin-top: 0.67em;
+    margin-bottom: 0.67em;
+    margin-left: 0;
+    margin-right: 0;
+    font-weight: bold;
+    color: #00008B;
+}
+
+</style>
+<body>
+<h1>Book Recommendations</h1>
+
+
+<article th:each="bookRecs : ${bookRecArr}">
+
+    <ul>
+        <li th:text="'Title: ' + ${bookRecs.title}">Title></li>
+        <li th:text="'Author: ' + ${bookRecs.author}">Author</li>
+        <li th:text="'Description: ' + ${bookRecs.description}">Description</li>
+        <li>Cover Photo:</li>
+        <img th:src="${bookRecs.image}" alt="Photo Not Available" width="50" height="75"/>
+
+    </ul>
+</article>
+
+<a href="/user/form">Submit another book for new recommendations. </a>
+</body>
+</html>
