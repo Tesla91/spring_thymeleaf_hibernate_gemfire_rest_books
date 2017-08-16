@@ -10,11 +10,11 @@ import java.util.ArrayList;
 @Mapper
 public interface BooksMapper {
 
-    String GET_BOOK_ID = "SELECT id FROM `books`.book_info WHERE title = #{title}"  ;
-    String INSERT_BOOK_INFO = "INSERT INTO `books`.book_info (id, title, author, description, image) " +
+    String GET_BOOK_ID = "SELECT id FROM book_info WHERE title = #{title}"  ;
+    String INSERT_BOOK_INFO = "INSERT INTO book_info (id, title, author, description, image) " +
             "VALUES (#{id}, #{title}, #{author}, #{description}, #{image})"  ;
-    String GET_BOOK_INFO_BY_TITLE = "SELECT distinct(title) FROM `books`.book_info WHERE title = #{title}";
-    String GET_BOOK_INFO_BY_ID = "SELECT * FROM `books`.book_info WHERE id = #{id}";
+    String GET_BOOK_INFO_BY_TITLE = "SELECT distinct(title) FROM book_info WHERE title = #{title}";
+    String GET_BOOK_INFO_BY_ID = "SELECT * FROM book_info WHERE id = #{id}";
 
 
     @Select(GET_BOOK_ID)

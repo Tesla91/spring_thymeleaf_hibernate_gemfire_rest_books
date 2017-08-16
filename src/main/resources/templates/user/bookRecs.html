@@ -33,7 +33,9 @@ h1 {
 
     </ul>
 </article>
-
-<a href="/user/form">Submit another book for new recommendations. </a>
+<form th:action="@{/user/form}" method="get">
+    <button class="btn btn-md btn-basic btn-block" name="registration"
+            type="Submit">Submit another book for new recommendations.</button>
+</form>
 </body>
 </html>
